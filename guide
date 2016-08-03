@@ -1,0 +1,45 @@
+/home/wlw/language/opencv/ffimg2       ffmpeg截图删减前文件夹
+/home/wlw/language/opencv/ffimg3       ffmpeg截图处理后存放文件夹
+/home/wlw/language/opencv/procimage.py        截图处理文件
+/home/wlw/language/opencv/bg           背景图片存放文件夹
+/home/wlw/py-faster-rcnn/              深度学习模块文件夹
+/home/wlw/py-faster-rcnn/tools/dl.py   深度学习模块处理文件
+
+cd language/opencv/ffimg2
+ffmpeg  -rtsp_transport tcp -i rtsp://admin:12345@172.17.13.6:554/h264/ch33/main/av_stream -r 1 -s 1280X720 -f image2 njue-6-%d.jpeg
+
+cd language/opencv/ffimg2
+ffmpeg  -rtsp_transport tcp -i rtsp://admin:12345@172.17.13.109:554/h264/ch33/main/av_stream -r 1 -s 1280X720 -f image2 njue-109-%d.jpeg
+
+cd language/opencv
+./procimage.py
+
+cd py-faster-rcnn/tools
+python ./dl.py
+
+数据库
+id  int(20)   primary auto-increased
+ffid int(20)
+class_name varchar(50)
+score float
+cooridnate_x1 float
+cooridnate_y1 float
+cooridnate_x2 float
+cooridnate_y2 float
+object_time   varchar(50)
+image_name varchar(50)
+image_url varchar(100)
+
+
+
+ffmpeg  -rtsp_transport tcp -i rtsp://admin:12345@172.16.56.108:554/h264/ch33/main/av_stream -r 1 -s 1280X720 -f image2 njue-108-%d.jpg
+
+redis
+sudo pip install redis-server
+imutils
+sudo pip install imutils
+
+mysql
+1.sudo apt-get install mysql-server
+2.sudo apt-get isntall mysql-client
+3.sudo apt-get install libmysqlclient-dev
